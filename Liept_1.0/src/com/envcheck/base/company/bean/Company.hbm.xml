@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.envcheck.base.company.bean.Company" table="company">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+		<!--private String companyName;-->
+		<!--private String companySimpleName;-->
+		<!--private String parentCompany;-->
+		<!--private String parentCompanySimpleName;-->
+		<!--private Date   buildDate;-->
+
+		<property name="companyName" type="java.lang.String" >
+			<column name="company_name" not-null="true"></column>
+		</property>
+
+		<property name="companySimpleName" type="java.lang.String" >
+			<column name="company_simple_name" not-null="true"></column>
+		</property>
+
+		<property name="parentCompany" type="java.lang.String" >
+			<column name="parent_company" ></column>
+		</property>
+
+		<property name="parentCompanySimpleName" type="java.lang.String" >
+			<column name="parent_company_simple_name"></column>
+		</property>
+
+		<property name="buildDate" type="java.util.Date" >
+			<column name="build_date"></column>
+		</property>
+
+
+
+		<!--private String registerAsset;-->
+		<property name="registerAsset" type="java.lang.String" >
+			<column name="register_asset" ></column>
+		</property>
+		<!--private String industryCode;-->
+		<property name="industryCode" type="java.lang.String" >
+			<column name="industry_code" ></column>
+		</property>
+		<!--private String companyAddress;-->
+		<property name="companyAddress" type="java.lang.String" >
+			<column name="company_address" ></column>
+		</property>
+		<!--private String lawRepresent;-->
+		<property name="lawRepresent" type="java.lang.String" >
+			<column name="law_represent" ></column>
+		</property>
+		<!--private String lawRepresentPhone;-->
+		<property name="lawRepresentPhone" type="java.lang.String" >
+			<column name="law_represent_phone" ></column>
+		</property>
+		<!--private String lawFax;-->
+		<property name="lawFax" type="java.lang.String" >
+			<column name="law_fax" ></column>
+		</property>
+		<!--private String environmentPerson;-->
+		<property name="environmentPerson" type="java.lang.String" >
+			<column name="environment_person" ></column>
+		</property>
+		<!--private String environmentPersonPhone;-->
+		<property name="environmentPersonPhone" type="java.lang.String" >
+			<column name="environment_person_phone" ></column>
+		</property>
+		<!--private String environmentPersonFax;-->
+		<property name="environmentPersonFax" type="java.lang.String" >
+			<column name="environment_person_fax" ></column>
+		</property>
+		<!--private Date ldarStartTime;-->
+		<property name="ldarStartTime" type="java.util.Date" >
+			<column name="ldar_start_time"></column>
+		</property>
+
+		<!--private int checkPoint;-->
+		<property name="checkPoint" type="java.lang.Integer" >
+			<column name="check_point" ></column>
+		</property>
+		<!--private String mainMaterial;-->
+		<property name="mainMaterial" type="java.lang.String" >
+			<column name="main_material" ></column>
+		</property>
+		<!--private String middleMaterial;-->
+		<property name="middleMaterial" type="java.lang.String" >
+			<column name="middle_material" ></column>
+		</property>
+		<!--private String mainProduct;-->
+		<property name="mainProduct" type="java.lang.String" >
+			<column name="main_product" ></column>
+		</property>
+		<!--private String note;-->
+		<property name="note" type="java.lang.String" >
+			<column name="note" ></column>
+		</property>
+
+
+
+	</class>
+
+
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.scenemanage.weatherparam.bean.WeatherParam" table="weather_param">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="100" />
+		</id>
+
+		<property name="companyNumber" type="java.lang.String" >
+			<column name="company_number" length="20"></column>
+		</property>
+
+		<property name="createTime" type="java.lang.String" >
+			<column name="date" not-null="true"></column>
+		</property>
+		<property name="temperature" type="java.lang.String" >
+			<column name="temperature"  length="20" not-null="true"></column>
+		</property>
+		<property name="hnmidity" type="java.lang.String" >
+			<column name="hnmidity"  length="20" not-null="true"></column>
+		</property>
+		<property name="press" type="java.lang.String" >
+			<column name="press"  length="20" not-null="true"></column>
+		</property>
+		<property name="windDirection" type="java.lang.String" >
+			<column name="wind_direction"  length="20" not-null="true"></column>
+		</property>
+		<property name="windSpeed" type="java.lang.String" >
+			<column name="wind_speed"  length="20" not-null="true"></column>
+		</property>
+		<property name="note" type="java.lang.String" >
+			<column name="note"  length="50" ></column>
+		</property>
+
+	</class>
+
+</hibernate-mapping>
+

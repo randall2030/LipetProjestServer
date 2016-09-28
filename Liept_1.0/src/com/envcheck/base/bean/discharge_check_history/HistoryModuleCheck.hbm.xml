@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.envcheck.base.bean">
+	
+	<class name="com.envcheck.base.bean.discharge_check_history.HistoryModuleCheck" table="history_module_check">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+		<!--private String moduleId;   //对应的组件ID-->
+		<!--private Date endPeriodTime;-->
+
+		<property name="moduleId" type="java.lang.String" >
+			<column name="module_id"></column>
+		</property>
+
+		<property name="endPeriodTime" type="java.util.Date" >
+			<column name="end_period_time"></column>
+		</property>
+
+
+
+		<property name="checkEquipment" type="java.lang.String" >
+			<column name="check_equipment"></column>
+		</property>
+
+		<property name="startTime" type="java.util.Date" >
+			<column name="start_time"></column>
+		</property>
+
+		<property name="endTime" type="java.util.Date" >
+			<column name="end_time" ></column>
+		</property>
+
+		<property name="checkPerson" type="java.lang.String" >
+			<column name="check_person" ></column>
+		</property>
+
+		<property name="stopServer" type="java.lang.String" >
+			<column name="stop_server"></column>
+		</property>
+
+
+		<property name="isSuperCheckMode" type="java.lang.String" >
+			<column name="is_super_check_mode"></column>
+		</property>
+
+		<!--//仪器数据-->
+		<!--private String equipmentName;-->
+		<!--private int PPMNumber;-->
+		<!--private int BackgroundPPMNumber;-->
+		<!--private int leakNumberPerMinute;-->
+		<!--private String dataSource;-->
+		<!--private String note;-->
+
+		<property name="equipmentName" type="java.lang.String" >
+			<column name="equipment_name" ></column>
+		</property>
+
+		<property name="PPMNumber" type="java.lang.Integer" >
+			<column name="ppm_number" ></column>
+		</property>
+
+		<property name="BackgroundPPMNumber" type="java.lang.Integer" >
+			<column name="background_ppm_number" ></column>
+		</property>
+
+		<property name="leakNumberPerMinute" type="java.lang.Integer" >
+			<column name="leak_number_per_minute" ></column>
+		</property>
+
+		<property name="dataSource" type="java.lang.String" >
+			<column name="data_source" ></column>
+		</property>
+
+		<property name="note" type="java.lang.String" >
+			<column name="note" ></column>
+		</property>
+
+		<!--private String leakCheck;-->
+		<!--private String leakRepair;-->
+
+		<property name="leakCheck" type="java.lang.String" >
+			<column name="leak_check" ></column>
+		</property>
+
+		<property name="leakRepair" type="java.lang.String" >
+			<column name="leak_repair" ></column>
+		</property>
+
+		<!--//泄露数据-->
+		<!--private String leakSource;-->
+		<!--private String repairTable;-->
+		<!--private String repairNeed;-->
+		<!--private String repairNeedDesc;-->
+		<!--private String pumpIsRunning;-->
+
+		<property name="leakSource" type="java.lang.String" >
+			<column name="leak_source" ></column>
+		</property>
+
+		<property name="repairTable" type="java.lang.String" >
+			<column name="repair_table" ></column>
+		</property>
+
+		<property name="repairNeed" type="java.lang.String" >
+			<column name="repair_need" ></column>
+		</property>
+
+		<property name="repairNeedDesc" type="java.lang.String" >
+			<column name="repair_need_desc" ></column>
+		</property>
+
+		<property name="pumpIsRunning" type="java.lang.String" >
+			<column name="pump_is_running" ></column>
+		</property>
+
+
+		<!--//视频路径-->
+		<!--private String videoPath;-->
+
+		<!--private String informNumber;-->
+		<!--private String informSatus;-->
+		<!--private String workNumber;-->
+		<!--private String workStatus;-->
+		<!--private String pushInDelayRepair;-->
+
+		<property name="videoPath" type="java.lang.String" >
+			<column name="video_path" length="50"></column>
+		</property>
+
+		<property name="informNumber" type="java.lang.String" >
+			<column name="inform_number" length="20"></column>
+		</property>
+
+		<property name="informSatus" type="java.lang.String" >
+			<column name="inform_status" length="20"></column>
+		</property>
+
+		<property name="workNumber" type="java.lang.String" >
+			<column name="work_number" length="20"></column>
+		</property>
+
+		<property name="workStatus" type="java.lang.String" >
+			<column name="work_status" length="20"></column>
+		</property>
+
+		<property name="pushInDelayRepair" type="java.lang.String" >
+			<column name="push_in_delay_repair" ></column>
+		</property>
+
+		<!--private Date startDelayRepairDate;-->
+		<!--private Date hopeRepairDate;-->
+		<!--private Date successRepairStopDate;-->
+		<!--private String authorizePerson;-->
+		<!--private String delayRepairReason;-->
+		<!--private String successRepair;-->
+		<!--private Date successRepairDate;-->
+
+		<property name="startDelayRepairDate" type="java.util.Date" >
+			<column name="start_delay_repair_date" ></column>
+		</property>
+
+		<property name="hopeRepairDate" type="java.util.Date" >
+			<column name="hope_repair_date" ></column>
+		</property>
+
+		<property name="successRepairStopDate" type="java.util.Date">
+			<column name="success_repair_stop_date" ></column>
+		</property>
+
+		<property name="authorizePerson" type="java.lang.String">
+			<column name="authorize_person" length="20"></column>
+		</property>
+
+		<property name="delayRepairReason" type="java.lang.String">
+			<column name="delay_repair_reason" length="50"></column>
+		</property>
+
+		<property name="successRepair" type="java.lang.String">
+			<column name="success_repair" ></column>
+		</property>
+
+		<property name="successRepairDate" type="java.util.Date" >
+			<column name="success_repair_date" ></column>
+		</property>
+
+	</class>
+
+</hibernate-mapping>
+

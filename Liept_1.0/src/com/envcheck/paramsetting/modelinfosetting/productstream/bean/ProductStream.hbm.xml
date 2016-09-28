@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.modelinfosetting.productstream.bean.ProductStream" table="product_stream">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+		<property name="productStreamName" type="java.lang.String" >
+			<column name="product_stream_name" length="40" not-null="true"></column>
+		</property>
+
+		<property name="productStreamNumber" type="java.lang.String" >
+			<column name="product_stream_number" length="20" not-null="true"></column>
+		</property>
+
+		<property name="reactElement" type="java.lang.String" >
+			<column name="react_element" length="20" not-null="true"></column>
+		</property>
+
+		<property name="wasterPercent" type="java.lang.String" >
+			<column name="waster_percent" length="10" ></column>
+		</property>
+
+		<property name="vocPercent" type="java.lang.String" >
+			<column name="voc_percent" length="10" ></column>
+		</property>
+
+		<property name="hapPercent" type="java.lang.String" >
+			<column name="hap_percent" length="10"></column>
+		</property>
+
+		<property name="benPercent" type="java.lang.String" >
+			<column name="ben_percent" length="10"></column>
+		</property>
+
+		<property name="ghgPercent" type="java.lang.String" >
+			<column name="ghg_percent" length="10"></column>
+		</property>
+
+		<property name="ccl4Percent" type="java.lang.String" >
+			<column name="ccl4_percent" length="10"></column>
+		</property>
+
+		<property name="ethylalPercent" type="java.lang.String" >
+			<column name="ethylal_percent" length="10"></column>
+		</property>
+
+		<property name="chlorobenzolPercent" type="java.lang.String" >
+			<column name="chlorobenzol_percent" length="10"></column>
+		</property>
+
+		<property name="trichloroethanePercent" type="java.lang.String" >
+			<column name="trichloroethane_percent" length="10"></column>
+		</property>
+
+		<property name="acenaphthenePercent" type="java.lang.String" >
+			<column name="acenaphthene_percent" length="10"></column>
+		</property>
+
+		<property name="createTime"  column="create_time" type="java.util.Date" not-null="true" length="20"></property>
+		<property name="createPerson" column="create_person" type="java.lang.String"  not-null="true" length="20"></property>
+		<property name="modifyTime" column="modify_time" type="java.util.Date" not-null="true" length="20"></property>
+		<property name="modifyPerson" column="modify_person" type="java.lang.String" not-null="true" length="20"></property>
+		
+	</class>
+
+</hibernate-mapping>
+

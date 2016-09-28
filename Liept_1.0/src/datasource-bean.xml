@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+    <bean id="parentDataSource"  class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="user" value="root"/>
+        <property name="password" value="lalala" />
+        <property name="initialPoolSize" value="3"></property>
+        <property name="maxPoolSize" value="6"></property>
+    </bean>
+
+    <!--管理用户的数据库-->
+    <bean id="liept_DataSource"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+    <bean id="liept_yght_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_yght?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+    <bean id="liept_zgwd_hxhx_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zgwd_hxhx?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+    <bean id="liept_ylhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_ylhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_xhblg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_xhblg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+    <bean id="liept_tysh_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_tysh?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+    <bean id="liept_xhwb_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_xhwb?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_jbgm_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_jbgm?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+    <bean id="liept_qlhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_qlhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+    <bean id="liept_laxny_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_laxny?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_xdhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_xdhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+    <bean id="liept_ylkj_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_ylkj?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+    <bean id="liept_lbhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_lbhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_ljddsgm_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_ljddsgm?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+    <bean id="liept_sdjfyzx_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_sdjfyzx?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_wfzxrs_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_wfzxrs?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_wfmjhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_wfmjhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_sdxwsswkj_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_sdxwsswkj?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_wfsshg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_wfsshg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_sdwfsgwdhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_sdwfsgwdhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_zbwqhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zbwqhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+    <bean id="liept_zbhrxcl_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zbhrxcl?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_sdtsxj_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_sdtsxj?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+    <bean id="liept_zbswhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zbswhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_zbadmgfz_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zbadmgfz?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_dfhgzjc_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_dfhgzjc?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_hthsgm_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_hthsgm?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_sdjdhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_sdjdhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_pyhcdz_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_pyhcdz?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_pyydhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_pyydhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_pyshdhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_pyshdhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_dyhygl_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_dyhygl?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_fxhfdz_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_fxhfdz?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_fxgfjx_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_fxgfjx?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_hnlrny_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_hnlrny?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_httsxg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_httsxg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_zbfsjxhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zbfsjxhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_sdsthg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_sdsthg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+    <bean id="liept_zbfsjh_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zbfsjh?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_hnjhny_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_hnjhny?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+    <bean id="liept_zbxgrq_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zbxgrq?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_zbxgjxh_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zbxgjxh?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_pybdlhx_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_pybdlhx?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_htfzhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_htfzhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_zblbgm_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_zblbgm?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_pyrssysz_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_pyrssysz?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+    <bean id="liept_sdsshg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_sdsshg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_hzxfdhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_hzxfdhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_sdydlhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_sdydlhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+    <bean id="liept_sdgyhg_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_sdgyhg?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--测试-->
+    <bean id="liept_fyny_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_fyny?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+    <bean id="liept_test_DataSuorce"  parent="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/liept_test?useUnicode=true&amp;characterEncoding=UTF8"></property>
+    </bean>
+</beans>
+

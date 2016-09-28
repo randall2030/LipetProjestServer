@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="downchecktask" namespace="/scenemanage" extends="basePackge">
+
+		<action name="down_check_task_*" class="com.envcheck.scenemanage.downchecktask.action.DownCheckTaskAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/scenemanage/downchecktask/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">down_check_task_listUI</param>
+			</result>
+
+			<result name="downCheckTask" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">taskZipFile</param>
+				<!-- 使用经过转码的文件名作为下载文件名，downloadFileName属性
+                对应action类中的方法 getDownloadFileName() -->
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

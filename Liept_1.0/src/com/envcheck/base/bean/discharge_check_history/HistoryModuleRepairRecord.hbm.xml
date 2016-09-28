@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.base.bean.discharge_check_history.HistoryModuleRepairRecord" table="history_module_repair_record">
+
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+		<!--private String moduleId;   //对应的组件ID-->
+		<!--private Date endPeriodTime;-->
+
+		<property name="moduleId" type="java.lang.String" >
+			<column name="module_id"></column>
+		</property>
+
+		<property name="endPeriodTime" type="java.util.Date" >
+			<column name="end_period_time"></column>
+		</property>
+
+
+		<property name="repairResult" type="java.lang.Boolean" >
+			<column name="repair_result" not-null="true"></column>
+		</property>
+
+		<property name="tempStopRepair" type="java.lang.Boolean" >
+			<column name="temp_stop_repair" not-null="true"></column>
+		</property>
+
+		<!--private int repairNumber;-->
+		<property name="repairNumber" type="java.lang.Integer" >
+			<column name="repair_number"></column>
+		</property>
+		<!--private Date firstRepairDate;-->
+		<property name="firstRepairDate" type="java.util.Date" >
+			<column name="first_repair_date"></column>
+		</property>
+
+
+		<!--private String firstRepairPerson;-->
+		<property name="firstRepairPerson" type="java.lang.String" >
+			<column name="first_repair_person"></column>
+		</property>
+		<!--private String firstRepairMeasure;-->
+		<property name="firstRepairMeasure" type="java.lang.String" >
+			<column name="first_repair_measure"></column>
+		</property>
+
+		<!--private Date firstRepeateCheckDate;-->
+		<property name="firstRepeateCheckDate" type="java.util.Date" >
+			<column name="first_repeate_check_date"></column>
+		</property>
+		<!--private int firstRepeateCheckValue;-->
+		<property name="firstRepeateCheckValue" type="java.lang.Integer" >
+			<column name="first_repeate_check_value"></column>
+		</property>
+
+
+		<!--private Date endRepairDate;-->
+		<property name="endRepairDate" type="java.util.Date" >
+			<column name="end_repair_date"></column>
+		</property>
+		<!--private String endRepairPerson;-->
+		<property name="endRepairPerson" type="java.lang.String" >
+			<column name="end_repair_person"></column>
+		</property>
+
+
+		<!--private String endRepairMeasure;-->
+		<property name="endRepairMeasure" type="java.lang.String" >
+			<column name="end_repair_measure"></column>
+		</property>
+		<!--private Date endRepeateCheckDate;-->
+		<property name="endRepeateCheckDate" type="java.util.Date" >
+			<column name="end_repeate_check_date"></column>
+		</property>
+		<!--private int endtRepeateCheckValue;		-->
+		<property name="endtRepeateCheckValue" type="java.lang.Integer" >
+			<column name="end_repeate_check_value"></column>
+		</property>
+
+	</class>
+
+</hibernate-mapping>
+

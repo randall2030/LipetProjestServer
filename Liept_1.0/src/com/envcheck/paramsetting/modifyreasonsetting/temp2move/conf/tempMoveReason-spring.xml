@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+    <bean id="tempMoveReasonDao" class="com.envcheck.paramsetting.modifyreasonsetting.temp2move.dao.impl.TempMoveReasonDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="tempMoveReasonService" class="com.envcheck.paramsetting.modifyreasonsetting.temp2move.service.impl.TempMoveReasonService">
+        <property name="tempMoveReasonDao" ref="tempMoveReasonDao"></property>
+    </bean>
+
+    <bean id="tempMoveReasonAction" class="com.envcheck.paramsetting.modifyreasonsetting.temp2move.action.TempMoveReasonAction">
+        <property name="tempMoveReasonService" ref="tempMoveReasonService"></property>
+    </bean>
+
+</beans>
+

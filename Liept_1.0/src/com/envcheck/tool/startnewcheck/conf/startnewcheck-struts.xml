@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="startnewcheck" namespace="/tool" extends="basePackge">
+
+		<action name="start_new_check_*" class="com.envcheck.tool.startnewcheck.action.StartNewCheckAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/tool/startnewcheck/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">start_new_check_listUI</param>
+			</result>
+
+			<result name="listUI">/WEB-INF/jsp/tool/startnewcheck/listUI.jsp</result>
+		</action>
+	</package>
+
+</struts>

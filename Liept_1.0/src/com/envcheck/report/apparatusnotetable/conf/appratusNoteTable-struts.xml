@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="apparatusnotetable" namespace="/report" extends="basePackge">
+
+		<action name="apparatus_note_table_*" class="com.envcheck.report.apparatusnotetable.action.ApparatusNoteTableAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/report/apparatusnotetable/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">apparatus_note_table_listUI</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

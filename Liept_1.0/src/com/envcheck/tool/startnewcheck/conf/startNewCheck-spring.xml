@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+
+
+    <bean id="checkPeriodRecordDao" class="com.envcheck.tool.startnewcheck.dao.impl.CheckPeriodRecordDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="checkPeroidRecordService" class="com.envcheck.tool.startnewcheck.service.impl.CheckPeroidRecordService">
+        <property name="checkPeroidRecordDao" ref="checkPeriodRecordDao"></property>
+    </bean>
+
+
+    <bean id="historyModuleCheckDao" class="com.envcheck.tool.startnewcheck.dao.impl.HistoryModuleCheckDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="historyModuleCheckService" class="com.envcheck.tool.startnewcheck.service.impl.HistoryModuleCheckService">
+        <property name="historyModuleCheckDao" ref="historyModuleCheckDao"></property>
+    </bean>
+
+
+    <bean id="historyModuleRepairRecordDao" class="com.envcheck.tool.startnewcheck.dao.impl.HistoryModuleRepairRecordDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="historyModuleRepairRecordService" class="com.envcheck.tool.startnewcheck.service.impl.HistoryModuleRepairRecordService">
+        <property name="historyModuleRepairRecordDao" ref="historyModuleRepairRecordDao"></property>
+    </bean>
+
+
+
+
+    <bean id="startNewCheckAction" class="com.envcheck.tool.startnewcheck.action.StartNewCheckAction">
+
+        <property name="checkPeroidRecordService" ref="checkPeroidRecordService"/>
+        <property name="moduleService" ref="moduleService"/>
+        <property name="moduleCheckService" ref="moduleCheckService"/>
+        <property name="moduleRepairRecordService" ref="moduleRepairRecordService"/>
+        <property name="historyModuleCheckService" ref="historyModuleCheckService"/>
+        <property name="historyModuleRepairRecordService" ref="historyModuleRepairRecordService"/>
+    </bean>
+
+</beans>
+

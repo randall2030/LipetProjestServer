@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="allocatetask" namespace="/scenemanage" extends="basePackge">
+
+        <action name="allocate_task_*" class="com.envcheck.scenemanage.allocatetask.action.AllocateTaskAction"
+                method="{1}">
+            <result name="{1}">/WEB-INF/jsp/scenemanage/allocatetask/{1}.jsp</result>
+            <result name="list" type="redirectAction">
+                <param name="actionName">allocate_taskUI</param>
+            </result>
+
+            <result name="selectModuleUI">/WEB-INF/jsp/scenemanage/allocatetask/selectModuleUI.jsp</result>
+        </action>
+
+        <action name="allocate_taskUI" class="com.envcheck.scenemanage.allocatetask.action.AllocateTaskAction"
+                method="listUI">
+            <result name="listUI">/WEB-INF/jsp/scenemanage/allocatetask/listUI.jsp</result>
+        </action>
+    </package>
+
+</struts>

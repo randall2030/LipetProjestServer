@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.checkrepairsetting.revealsrc.bean.RevealSource" table="reveal_source">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+		<property name="revealSrcName" type="java.lang.String" >
+			<column name="reveal_src_name" length="20" not-null="true"></column>
+		</property>
+
+		<property name="revealSrcNumber" type="java.lang.String" >
+			<column name="reveal_src_number" length="20" not-null="true"></column>
+		</property>
+
+		<property name="modelType" type="java.lang.String" >
+			<column name="model_type" length="20" ></column>
+		</property>
+
+		<property name="createTime"  column="create_time" type="java.util.Date"  length="20"></property>
+		<property name="createPerson" column="create_person" type="java.lang.String"   length="20"></property>
+		<property name="modifyTime" column="modify_time" type="java.util.Date"  length="20"></property>
+		<property name="modifyPerson" column="modify_person" type="java.lang.String"  length="20"></property>
+		
+	</class>
+
+</hibernate-mapping>
+

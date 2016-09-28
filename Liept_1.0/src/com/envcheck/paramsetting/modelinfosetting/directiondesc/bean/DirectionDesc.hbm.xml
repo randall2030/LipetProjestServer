@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.modelinfosetting.directiondesc.bean.DirectionDesc" table="direction_desc">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+		<property name="directionDescName" type="java.lang.String" >
+			<column name="direction_desc_name" length="20" not-null="true"></column>
+		</property>
+
+		<property name="directionDescNumber" type="java.lang.String" >
+			<column name="direction_desc_number" length="20" not-null="true"></column>
+		</property>
+
+
+
+		<property name="createTime"  column="create_time" type="java.util.Date"  length="20"></property>
+		<property name="createPerson" column="create_person" type="java.lang.String"  length="20"></property>
+		<property name="modifyTime" column="modify_time" type="java.util.Date"  length="20"></property>
+		<property name="modifyPerson" column="modify_person" type="java.lang.String"  length="20"></property>
+		
+	</class>
+
+</hibernate-mapping>
+

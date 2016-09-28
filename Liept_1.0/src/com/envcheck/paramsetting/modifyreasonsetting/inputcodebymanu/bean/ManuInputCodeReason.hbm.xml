@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.modifyreasonsetting.inputcodebymanu.bean.ManuInputCodeReason" table="manu_input_code_reason">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+		<property name="companyCode" type="java.lang.String" >
+			<column name="company_code" length="20" ></column>
+		</property>
+
+		<property name="manuInputCodeReasonName" type="java.lang.String" >
+			<column name="manu_input_code_name" length="40" ></column>
+		</property>
+
+		<property name="manuInputCodeReasonNumber" type="java.lang.String" >
+			<column name="manu_input_code_number" length="40" ></column>
+		</property>
+
+
+		<property name="createTime"  column="create_time" type="java.util.Date" length="20"></property>
+		<property name="createPerson" column="create_person" type="java.lang.String"  length="20"></property>
+		<property name="modifyTime" column="modify_time" type="java.util.Date" length="20"></property>
+		<property name="modifyPerson" column="modify_person" type="java.lang.String" length="20"></property>
+
+
+		
+	</class>
+
+</hibernate-mapping>
+

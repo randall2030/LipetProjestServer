@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="batchModifyModuleDao" class="com.envcheck.tool.batchmodifymodule.dao.impl.BatchModifyModuleDao" >
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="batchModifyModuleService" class="com.envcheck.tool.batchmodifymodule.service.impl.BatchModifyModuleService">
+        <property name="batchModifyModuleDao" ref="batchModifyModuleDao"></property>
+    </bean>
+
+    <bean id="batchModifyModuleAction" class="com.envcheck.tool.batchmodifymodule.action.BatchModifyModuleAction">
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+</beans>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.modelinfosetting.chemical.bean.Chemical" table="chemical">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+		<property name="chemicalName" type="java.lang.String" >
+			<column name="chemical_name" length="20" not-null="true"></column>
+		</property>
+
+		<property name="chemicalNumber" type="java.lang.String" >
+			<column name="chemical_number" length="20" not-null="true"></column>
+		</property>
+
+		<property name="casNumber" type="java.lang.String" >
+			<column name="cas_number" length="20" not-null="true"></column>
+		</property>
+
+		<property name="reactElement" type="java.lang.String" >
+			<column name="react_element" length="20" not-null="true"></column>
+		</property>
+
+		<property name="ben" type="java.lang.Boolean" >
+			<column name="ben" ></column>
+		</property>
+
+		<property name="waster" type="java.lang.Boolean" >
+			<column name="waster"></column>
+		</property>
+
+		<property name="voc" type="java.lang.Boolean" >
+			<column name="voc" ></column>
+		</property>
+
+		<property name="hap" type="java.lang.Boolean" >
+			<column name="hap" ></column>
+		</property>
+
+		<property name="ghg" type="java.lang.Boolean" >
+			<column name="ghg" ></column>
+		</property>
+
+		<property name="moleculeFormula" type="java.lang.String" >
+			<column name="molecule_formula" length="20" ></column>
+		</property>
+
+		<property name="boiling" type="java.lang.String" >
+			<column name="bolling" length="20" ></column>
+		</property>
+
+		<property name="steamPress" type="java.lang.String" >
+			<column name="steam_press" length="20"></column>
+		</property>
+
+
+
+		<property name="createTime"  column="create_time" type="java.util.Date"  length="20"></property>
+		<property name="createPerson" column="create_person" type="java.lang.String"   length="20"></property>
+		<property name="modifyTime" column="modify_time" type="java.util.Date"  length="20"></property>
+		<property name="modifyPerson" column="modify_person" type="java.lang.String"  length="20"></property>
+		
+	</class>
+
+</hibernate-mapping>
+

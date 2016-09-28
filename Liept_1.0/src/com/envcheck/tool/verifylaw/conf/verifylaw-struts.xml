@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="verifylaw" namespace="/tool" extends="basePackge">
+
+		<action name="verify_law_*" class="com.envcheck.tool.verifylaw.action.VerifyLawAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/tool/verifylaw/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">verify_law_listUI</param>
+			</result>
+			<result name="listUI">/WEB-INF/jsp/tool/verifylaw/listUI.jsp</result>
+		</action>
+
+		<action name="verify_lawUI" class="com.envcheck.tool.verifylaw.action.VerifyLawAction" method="listUI">
+			<result name="listUI">/WEB-INF/jsp/tool/verifylaw/listUI.jsp</result>
+		</action>
+	</package>
+
+</struts>

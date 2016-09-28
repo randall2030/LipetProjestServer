@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.tool.importmodule.bean.ImportFileHistory" table="import_file_history">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+
+		<property name="importFileName"  column="import_file_name" type="java.lang.String" length="20" not-null="true"></property>
+		<property name="createPerson"  column="create_person" type="java.lang.String" length="20" not-null="true"></property>
+
+		<property name="newDataNumber" column="new_data_number" type="java.lang.Integer" not-null="true"></property>
+		<property name="modifyDataNumber" column="modify_data_number" type="java.lang.Integer" not-null="true"></property>
+		<property name="discardDataNumber" column="discard_data_number" type="java.lang.Integer" not-null="true"></property>
+
+		<property name="createTime" column="create_time" type="java.util.Date" length="20" not-null="true"></property>
+
+
+		
+	</class>
+
+</hibernate-mapping>
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.base.user.bean.User" table="user">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+		<property name="username" type="java.lang.String" >
+			<column name="user_name" length="40" not-null="true"></column>
+		</property>
+
+
+		<property name="password" type="java.lang.String" >
+			<column name="password" length="40" not-null="true"></column>
+		</property>
+
+		<property name="usernameCN" type="java.lang.String" >
+			<column name="user_name_cn" length="40"></column>
+		</property>
+
+		<property name="parentCompany" type="java.lang.String" >
+			<column name="parent_company" length="20" ></column>
+		</property>
+
+		<property name="company" type="java.lang.String" >
+			<column name="company" length="20" ></column>
+		</property>
+
+		<property name="companyNameCN" type="java.lang.String" >
+			<column name="company_name_cn" length="40"></column>
+		</property>
+
+
+		<property name="visitPrivilege" type="java.lang.Boolean" >
+			<column name="visit_privilege"  not-null="true"></column>
+		</property>
+
+		<property name="canSelectCompany" type="java.lang.Boolean" >
+			<column name="can_select_company"   not-null="true"></column>
+		</property>
+
+		<property name="status" type="java.lang.Boolean" >
+			<column name="status"   not-null="true" ></column>
+		</property>
+
+		<property name="createTime" type="java.util.Date" >
+			<column name="create_time" length="40" ></column>
+		</property>
+
+	</class>
+
+
+</hibernate-mapping>
+

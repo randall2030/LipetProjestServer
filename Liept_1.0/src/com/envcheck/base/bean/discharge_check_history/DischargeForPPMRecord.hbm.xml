@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.base.bean.discharge_check_history.DischargeForPPMRecord" table="discharge_for_ppm_record">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+		<property name="cleanPPMValue" type="java.lang.Integer" >
+			<column name="clean_ppm_value" length="20"></column>
+		</property>
+
+		<property name="checkTime" type="java.util.Date" >
+			<column name="check_time"></column>
+		</property>
+
+		<property name="endPeriodRecord" type="java.lang.Boolean" >
+			<column name="end_period_record"></column>
+		</property>
+
+
+	</class>
+
+</hibernate-mapping>
+

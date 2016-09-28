@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.checkrepairsetting.standrdgasmanage.bean.StandGas" table="stand_gas">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+		<property name="standGasName" type="java.lang.String" >
+			<column name="stand_gas_name" length="20" not-null="true"></column>
+		</property>
+
+		<property name="standGasNumber" type="java.lang.String" >
+			<column name="stand_gas_number" length="20" not-null="true"></column>
+		</property>
+
+		<property name="companyNumber" type="java.lang.String" >
+			<column name="company_number" ></column>
+		</property>
+
+		<property name="actualDensity" type="java.lang.Integer" >
+			<column name="actual_density" not-null="true"></column>
+		</property>
+
+		<property name="validTime" type="java.util.Date" >
+			<column name="valid_time" length="20" ></column>
+		</property>
+
+		<property name="stopuUse" type="java.lang.Boolean" >
+			<column name="stop_use" ></column>
+		</property>
+
+		<property name="stopTime" type="java.util.Date" >
+			<column name="stop_time" length="20" ></column>
+		</property>
+
+		<property name="theoryDensity" type="java.lang.Integer" >
+			<column name="theory_density" ></column>
+		</property>
+
+	</class>
+
+</hibernate-mapping>
+

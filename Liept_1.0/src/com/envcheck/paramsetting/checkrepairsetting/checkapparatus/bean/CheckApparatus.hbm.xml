@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.checkrepairsetting.checkapparatus.bean.CheckApparatus" table="check_apparatus">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+		<property name="sequenceNumber" type="java.lang.String" >
+			<column name="sequence_number" length="20" not-null="true"></column>
+		</property>
+
+		<property name="apparatusName" type="java.lang.String" >
+			<column name="apparatus_name" length="20" not-null="true"></column>
+		</property>
+
+		<property name="lastCheckTime" type="java.util.Date" >
+			<column name="last_check_time" ></column>
+		</property>
+
+		<property name="reactTime" type="java.lang.String" >
+			<column name="react_time" length="20" not-null="true"></column>
+		</property>
+		
+	</class>
+
+</hibernate-mapping>
+

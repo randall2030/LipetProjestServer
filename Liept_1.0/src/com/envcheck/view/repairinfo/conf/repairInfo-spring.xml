@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="moduleRepairRecordDao" class="com.envcheck.view.repairinfo.dao.impl.ModuleRepairRecordDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="moduleRepairRecordService" class="com.envcheck.view.repairinfo.service.impl.ModuleRepairRecordService">
+        <property name="moduleRepairRecordDao" ref="moduleRepairRecordDao"></property>
+    </bean>
+
+    <bean id="repairInfoAction" class="com.envcheck.view.repairinfo.action.RepairInfoAction">
+        <property name="moduleService" ref="moduleService"/>
+        <property name="lawService" ref="lawService"/>
+    </bean>
+    <bean class="com.envcheck.android.action.ClientRequestAction" id="clientRequestAction">
+        <property name="moduleRepairRecordService" ref="moduleRepairRecordService"/>
+    </bean>
+
+
+</beans>
+

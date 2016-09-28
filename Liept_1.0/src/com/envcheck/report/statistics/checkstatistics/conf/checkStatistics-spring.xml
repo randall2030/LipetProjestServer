@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="checkStatisticsDao" class="com.envcheck.report.statistics.checkstatistics.dao.impl.CheckStatisticsDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="checkStatisticsService" class="com.envcheck.report.statistics.checkstatistics.service.impl.CheckStatisticsService">
+        <property name="checkStatisticsDao" ref="checkStatisticsDao"></property>
+    </bean>
+    <bean id="checkStatisticsAction" class="com.envcheck.report.statistics.checkstatistics.action.CheckStatisticsAction">
+        <property name="moduleCheckService" ref="moduleCheckService"/>
+        <property name="deviceInfoService" ref="deviceInfoService"/>
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+</beans>

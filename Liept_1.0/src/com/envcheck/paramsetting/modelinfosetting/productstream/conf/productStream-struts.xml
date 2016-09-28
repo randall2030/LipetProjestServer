@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+		<!DOCTYPE struts PUBLIC
+				"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+				"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+<package name="productstream" namespace="/paramsetting/modelinfosetting" extends="basePackge">
+
+	<action name="product_stream_*" class="com.envcheck.paramsetting.modelinfosetting.productstream.action.ProductStreamAction" method="{1}">
+		<result name="{1}">/WEB-INF/jsp/paramsetting/modelinfosetting/productstream/{1}.jsp</result>
+		<result name="list" type="redirectAction">
+			<param name="actionName">product_stream_listUI</param>
+		</result>
+	</action>
+
+</package>
+
+</struts>

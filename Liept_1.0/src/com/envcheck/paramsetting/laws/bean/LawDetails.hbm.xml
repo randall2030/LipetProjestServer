@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.laws.bean.LawDetails" table="law_details">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+		<property name="remark" column="remark" type="java.lang.String" length="40"></property>
+
+		<property name="ppmLeakThreshold" column="ppm_leak_threshold" type="java.lang.String" length="20"></property>
+		<property name="PPMFirstRepairTime" column="ppm_first_repair_time" type="java.lang.String" length="20"></property>
+		<property name="PPMFirstRepairUnit" column="ppm_first_repair_unit" type="java.lang.String" length="20"></property>
+		<property name="PPMFinalRepairTime" column="ppm_final_repair_time" type="java.lang.String" length="20"></property>
+		<property name="PPMFinalRepairUnit" column="ppm_final_repair_unit" type="java.lang.String" length="20"></property>
+
+		<property name="DPM" column="dpm" type="java.lang.String" length="20"></property>
+		<property name="DPMFirstRepairTime" column="dpm_first_repair_time" type="java.lang.String" length="20"></property>
+		<property name="DPMFirstRepairUnit" column="dpm_first_repair_unit" type="java.lang.String" length="20"></property>
+		<property name="DPMFinalRepairTime" column="dpm_final_repair_time" type="java.lang.String" length="20"></property>
+		<property name="DPMFinalRepairUnit" column="dpm_final_repair_unit" type="java.lang.String" length="20"></property>
+		<property name="allowAgainAOV" column="allow_again_aov" type="java.lang.String" length="20"></property>
+
+		<property name="oneToRepairChance" column="one_to_repair_chance" type="java.lang.String" length="20"></property>
+		<property name="readingThreshold" column="reading_threshold" type="java.lang.String" length="20"></property>
+		<property name="oneToRepair" column="one_to_repair" type="java.lang.String" length="20"></property>
+		<property name="oneToRepairUnit" column="one_to_repair_unit" type="java.lang.String" length="20"></property>
+
+		<property name="trackingPeriod" column="tracking_period" type="java.lang.String" length="20"></property>
+		<property name="hour" column="hour" type="java.lang.String" length="20"></property>
+		<property name="list" column="list" type="java.lang.String" length="20"></property>
+		<property name="checkFre" column="check_fre" type="java.lang.String" length="20"></property>
+		<property name="init" column="init" type="java.lang.String" length="20"></property>
+		<property name="AOV" column="aov" type="java.lang.String" length="20"></property>
+
+
+
+		<set name="moduleType" table="module_type_desc" cascade="all" lazy="false">
+			<key column="law_detail_id"/>
+			<one-to-many class="com.envcheck.paramsetting.laws.bean.ModuleTypeDesc"></one-to-many>
+		</set>
+
+		<set name="mediumStatus" table="medium_status_desc" cascade="all" lazy="false">
+			<key column="law_detail_id"/>
+			<one-to-many class="com.envcheck.paramsetting.laws.bean.MediumStatusDesc"></one-to-many>
+		</set>
+
+	</class>
+
+</hibernate-mapping>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="useroperatenote" namespace="/securesetting" extends="basePackge">
+
+		<action name="user_operate_note_*" class="com.envcheck.securesetting.useroperatenote.action.UserOperateNoteAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/securesetting/useroperatenote/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">user_operate_note_listUI</param>
+			</result>
+		</action>
+
+		<action name="user_operateUI" class="com.envcheck.securesetting.useroperatenote.action.UserOperateNoteAction" method="listUI">
+			<result name="listUI">/WEB-INF/jsp/securesetting/useroperatenote/listUI.jsp</result>
+		</action>
+	</package>
+
+</struts>

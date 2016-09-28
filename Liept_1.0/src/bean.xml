@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <import resource="classpath:datasource-bean.xml"/>
+
+    <bean id="dynamicDataSource" class="com.envcheck.base.dynamic_change_datasource.DynamicDataSource" >
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <entry value-ref="liept_yght_DataSuorce" key="liept_yght"></entry>
+                <entry value-ref="liept_zgwd_hxhx_DataSuorce" key="liept_zgwd_hxhx"></entry>
+                <entry value-ref="liept_ylhg_DataSuorce" key="liept_ylhg"></entry>
+                <entry value-ref="liept_xhblg_DataSuorce" key="liept_xhblg"></entry>
+                <entry value-ref="liept_tysh_DataSuorce" key="liept_tysh"></entry>
+                <entry value-ref="liept_xhwb_DataSuorce" key="liept_xhwb"></entry>
+                <entry value-ref="liept_jbgm_DataSuorce" key="liept_jbgm"></entry>
+                <entry value-ref="liept_qlhg_DataSuorce" key="liept_qlhg"></entry>
+
+                <entry value-ref="liept_laxny_DataSuorce" key="liept_laxny"></entry>
+                <entry value-ref="liept_xdhg_DataSuorce" key="liept_xdhg"></entry>
+                <entry value-ref="liept_ylkj_DataSuorce" key="liept_ylkj"></entry>
+                <entry value-ref="liept_lbhg_DataSuorce" key="liept_lbhg"></entry>
+                <entry value-ref="liept_ljddsgm_DataSuorce" key="liept_ljddsgm"></entry>
+
+                <entry value-ref="liept_sdjfyzx_DataSuorce" key="liept_sdjfyzx"></entry>
+                <entry value-ref="liept_wfzxrs_DataSuorce" key="liept_wfzxrs"></entry>
+                <entry value-ref="liept_wfmjhg_DataSuorce" key="liept_wfmjhg"></entry>
+
+                <entry value-ref="liept_sdxwsswkj_DataSuorce" key="liept_sdxwsswkj"></entry>
+                <entry value-ref="liept_wfsshg_DataSuorce" key="liept_wfsshg"></entry>
+                <entry value-ref="liept_sdwfsgwdhg_DataSuorce" key="liept_sdwfsgwdhg"></entry>
+                <entry value-ref="liept_zbwqhg_DataSuorce" key="liept_zbwqhg"></entry>
+
+                <entry value-ref="liept_zbhrxcl_DataSuorce" key="liept_zbhrxcl"></entry>
+                <entry value-ref="liept_sdtsxj_DataSuorce" key="liept_sdtsxj"></entry>
+
+                <entry value-ref="liept_zbswhg_DataSuorce" key="liept_zbswhg"></entry>
+                <entry value-ref="liept_zbadmgfz_DataSuorce" key="liept_zbadmgfz"></entry>
+                <entry value-ref="liept_dfhgzjc_DataSuorce" key="liept_dfhgzjc"></entry>
+                <entry value-ref="liept_hthsgm_DataSuorce" key="liept_hthsgm"></entry>
+                <entry value-ref="liept_sdjdhg_DataSuorce" key="liept_sdjdhg"></entry>
+
+                <entry value-ref="liept_pyhcdz_DataSuorce" key="liept_pyhcdz"></entry>
+
+                <entry value-ref="liept_pyydhg_DataSuorce" key="liept_pyydhg"></entry>
+                <entry value-ref="liept_pyshdhg_DataSuorce" key="liept_pyshdhg"></entry>
+                <entry value-ref="liept_dyhygl_DataSuorce" key="liept_dyhygl"></entry>
+
+                <entry value-ref="liept_fxhfdz_DataSuorce" key="liept_fxhfdz"></entry>
+
+                <entry value-ref="liept_fxgfjx_DataSuorce" key="liept_fxgfjx"></entry>
+
+                <entry value-ref="liept_hnlrny_DataSuorce" key="liept_hnlrny"></entry>
+
+                <entry value-ref="liept_httsxg_DataSuorce" key="liept_httsxg"></entry>
+
+                <entry value-ref="liept_zbfsjxhg_DataSuorce" key="liept_zbfsjxhg"></entry>
+                <entry value-ref="liept_sdsthg_DataSuorce" key="liept_sdsthg"></entry>
+
+                <entry value-ref="liept_zbfsjh_DataSuorce" key="liept_zbfsjh"></entry>
+
+                <entry value-ref="liept_hnjhny_DataSuorce" key="liept_hnjhny"></entry>
+
+                <entry value-ref="liept_zbxgrq_DataSuorce" key="liept_zbxgrq"></entry>
+                <entry value-ref="liept_zbxgjxh_DataSuorce" key="liept_zbxgjxh"></entry>
+                <entry value-ref="liept_pybdlhx_DataSuorce" key="liept_pybdlhx"></entry>
+
+
+                <entry value-ref="liept_htfzhg_DataSuorce" key="liept_htfzhg"></entry>
+                <entry value-ref="liept_zblbgm_DataSuorce" key="liept_zblbgm"></entry>
+
+                <entry value-ref="liept_pyrssysz_DataSuorce" key="liept_pyrssysz"></entry>
+
+                <entry value-ref="liept_sdsshg_DataSuorce" key="liept_sdsshg"></entry>
+                <entry value-ref="liept_hzxfdhg_DataSuorce" key="liept_hzxfdhg"></entry>
+                <entry value-ref="liept_sdydlhg_DataSuorce" key="liept_sdydlhg"></entry>
+                <entry value-ref="liept_sdgyhg_DataSuorce" key="liept_sdgyhg"></entry>
+
+
+
+
+
+
+                <!--测试 -->
+                <entry value-ref="liept_test_DataSuorce" key="liept_test"></entry>
+                <entry value-ref="liept_fyny_DataSuorce" key="liept_fyny"></entry>
+            </map>
+        </property>
+        <!--liept_DataSource-->
+        <property name="defaultTargetDataSource" ref="liept_DataSource" ></property>
+    </bean>
+
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dynamicDataSource"></property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:com/envcheck/paramsetting/*/bean/*.hbm.xml</value>
+                <value>classpath:com/envcheck/paramsetting/*/*/bean/*.hbm.xml</value>
+                <value>classpath:com/envcheck/scenemanage/*/bean/*.hbm.xml</value>
+
+                <value>classpath:com/envcheck/tool/*/bean/*.hbm.xml</value>
+                <value>classpath:com/envcheck/tool/*/bean/*.hbm.xml</value>
+
+                <value>classpath:com/envcheck/base/*/*.hbm.xml</value>
+                <value>classpath:com/envcheck/base/*/*/*.hbm.xml</value>
+
+            </list>
+        </property>
+    </bean>
+
+    <!-- 配置事务管理 -->
+    <bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <!-- 事务通知 -->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="list*" read-only="true"/>
+            <tx:method name="*" rollback-for="Throwable"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 配置被事务管理的类 -->
+    <aop:config>
+
+        <aop:pointcut id="serviceOperationBaseService"
+                      expression="execution(* com.envcheck.base.dao.*.*(..))"/>
+        <aop:pointcut id="serviceOperationExtendsService"
+                      expression="execution(* com.envcheck.*.*.dao.impl.*.*(..))"/>
+        <aop:pointcut id="serviceOperationExtendsExtendsService"
+                      expression="execution(* com.envcheck.*.*.*.dao.impl.*.*(..))"/>
+
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperationBaseService"></aop:advisor>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperationExtendsService"></aop:advisor>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperationExtendsExtendsService"></aop:advisor>
+    </aop:config>
+
+
+    <!--切换数据源相关AOP-->
+    <bean id="paramsettingAop" class="com.envcheck.base.dynamic_change_datasource.ParamSettingDataSourceChangeAop"></bean>
+
+    <aop:config>
+        <aop:pointcut expression="execution(* com.envcheck.paramsetting.*.*.service.impl.*.*(..))" id="ptParamsetting2"/>
+        <aop:pointcut expression="execution(* com.envcheck.paramsetting.*.service.impl.*.*(..))" id="ptParamsetting3"/>
+        <!-- 切面 -->
+        <aop:aspect ref="paramsettingAop">
+            <aop:before method="doBefore" pointcut-ref="ptParamsetting2"/>
+            <aop:after method="doAfter" pointcut-ref="ptParamsetting2"/>
+
+            <aop:before method="doBefore" pointcut-ref="ptParamsetting3"/>
+            <aop:after method="doAfter" pointcut-ref="ptParamsetting3"/>
+        </aop:aspect>
+
+    </aop:config>
+
+
+    <!--测试devicetype 业务逻辑-->
+    <import resource="classpath:com/envcheck/paramsetting/*/conf/*-spring.xml"/>
+    <import resource="classpath:com/envcheck/paramsetting/*/*/conf/*-spring.xml"/>
+    <import resource="classpath:com/envcheck/tool/*/conf/*-spring.xml"/>
+    <import resource="classpath:com/envcheck/view/*/conf/*-spring.xml"/>
+
+
+    <import resource="classpath:com/envcheck/report/*/*/conf/*-spring.xml"/>
+
+    <import resource="classpath:com/envcheck/scenemanage/*/conf/*-spring.xml"/>
+    <import resource="classpath:com/envcheck/base/user/conf/user-spring.xml"/>
+    <import resource="classpath:com/envcheck/base/company/conf/company-spring.xml"/>
+
+
+</beans>

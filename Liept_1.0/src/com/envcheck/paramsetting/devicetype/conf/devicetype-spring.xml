@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+    <bean id="deviceTypeDao" class="com.envcheck.paramsetting.devicetype.dao.impl.DeviceTypeDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="deviceTypeService" class="com.envcheck.paramsetting.devicetype.service.impl.DeviceTypeService">
+        <property name="deviceTypeDao" ref="deviceTypeDao"></property>
+    </bean>
+
+    <bean id="deviceTypeAction" class="com.envcheck.paramsetting.devicetype.action.DeviceTypeAction">
+        <property name="deviceTypeService" ref="deviceTypeService"></property>
+    </bean>
+
+</beans>
+

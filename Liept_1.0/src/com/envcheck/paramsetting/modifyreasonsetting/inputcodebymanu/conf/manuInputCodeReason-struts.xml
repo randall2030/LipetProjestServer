@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="inputcodebymanu" namespace="/paramsetting/modifyreasonsetting" extends="basePackge">
+
+		<action name="input_code_by_manu_*" class="com.envcheck.paramsetting.modifyreasonsetting.inputcodebymanu.action.ManuInputCodeAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/paramsetting/modifyreasonsetting/inputcodebymanu/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">input_code_by_manu_listUI</param>
+			</result>
+		</action>
+
+	</package>
+
+</struts>

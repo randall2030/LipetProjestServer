@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.envcheck.scenemanage.allocatetask.bean" auto-import="true">
+	
+	<class name="com.envcheck.scenemanage.allocatetask.bean.Task" table="task" >
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+		<property name="device" type="java.lang.String" >
+			<column name="device" length="20" ></column>
+		</property>
+		<property name="area" type="java.lang.String" >
+			<column name="area" ></column>
+		</property>
+		<property name="taskName" type="java.lang.String" >
+			<column name="task_name"  length="40" ></column>
+		</property>
+		<property name="hasCheck" type="java.lang.Integer" >
+			<column name="has_check" ></column>
+		</property>
+		<property name="leak" type="java.lang.Integer" >
+			<column name="leak"  ></column>
+		</property>
+		<property name="dor" type="java.lang.Integer" >
+			<column name="dor"  ></column>
+		</property>
+
+		<property name="total" type="java.lang.Integer" >
+			<column name="total"  ></column>
+		</property>
+
+		<property name="checkType" type="java.lang.String" >
+			<column name="check_type"  length="20" ></column>
+		</property>
+
+		<property name="planType" type="java.lang.String" >
+			<column name="plan_type"   length="20" ></column>
+		</property>
+
+		<property name="year" type="java.lang.Integer" >
+			<column name="year"  ></column>
+		</property>
+
+		<property name="intervalTime" type="java.lang.Integer" >
+			<column name="interval_time"   ></column>
+		</property>
+
+		<property name="startTime" type="java.util.Date" >
+			<column name="start_time"  length="20"></column>
+		</property>
+
+		<property name="endTime" type="java.util.Date" >
+			<column name="end_time" length="20" ></column>
+		</property>
+
+		<property name="stop" type="java.lang.Boolean" >
+			<column name="stop" ></column>
+		</property>
+
+		<property name="userPrivate" type="java.lang.Boolean" >
+			<column name="user_private" ></column>
+		</property>
+
+		<property name="user" type="java.lang.String" >
+			<column name="user"  length="20" ></column>
+	</property>
+
+
+		<property name="localSavePath" type="java.lang.String" >
+			<column name="local_save_path"  length="150" ></column>
+		</property>
+
+
+		<property name="createTime"  column="create_time" type="java.util.Date"  length="20"></property>
+		<property name="createPerson" column="create_person" type="java.lang.String"  length="20"></property>
+		<property name="modifyTime" column="modify_time" type="java.util.Date" length="20"></property>
+		<property name="modifyPerson" column="modify_person" type="java.lang.String"  length="20"></property>
+
+	</class>
+
+</hibernate-mapping>
+

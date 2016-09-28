@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+    <bean id="lawDao" class="com.envcheck.paramsetting.laws.dao.impl.LawDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="lawService" class="com.envcheck.paramsetting.laws.service.impl.LawService">
+        <property name="lawDao" ref="lawDao"></property>
+    </bean>
+
+    <bean id="lawAction" class="com.envcheck.paramsetting.laws.action.LawAction">
+        <property name="lawService" ref="lawService"></property>
+        <property name="lawDetailsService" ref="lawDetailsService"></property>
+    </bean>
+
+    <bean class="com.envcheck.tool.verifylaw.action.VerifyLawAction" id="verifyLawAction">
+        <property name="lawService" ref="lawService"/>
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+    <bean class="com.envcheck.report.checkhistory.action.CheckHistoryAction" id="checkHistoryAction">
+        <property name="lawService" ref="lawService"/>
+        <property name="moduleService" ref="moduleService"/>
+        <property name="minCheckTimeService" ref="minCheckTimeService"/>
+    </bean>
+
+</beans>
+

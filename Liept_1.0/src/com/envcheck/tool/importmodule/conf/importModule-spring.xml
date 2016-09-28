@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+
+    <bean id="moduleDao" class="com.envcheck.view.moduleinfo.dao.impl.ModuleDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="importFileHistoryDao" class="com.envcheck.tool.importmodule.dao.impl.ImportFileHistoryDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+
+
+    <bean id="moduleService" class="com.envcheck.view.moduleinfo.service.impl.ModuleService">
+        <property name="moduleDao" ref="moduleDao"></property>
+    </bean>
+
+    <bean id="importFileHistoryService" class="com.envcheck.tool.importmodule.service.impl.ImportFileHistoryService">
+        <property name="importFileHistoryDao" ref="importFileHistoryDao"></property>
+    </bean>
+
+
+
+    <bean id="importModuleAction" class="com.envcheck.tool.importmodule.action.ImportModuleAction">
+        <property name="moduleService" ref="moduleService"></property>
+        <property name="importFileHistoryService" ref="importFileHistoryService"></property>
+        <property name="deviceInfoService" ref="deviceInfoService"/>
+        <property name="areaInfoService" ref="areaInfoService"/>
+    </bean>
+
+
+    <bean class="com.envcheck.report.statistics.modulestatistics.action.ModuleStatisticAction"
+          id="moduleStatisticAction">
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+    <bean class="com.envcheck.view.leakinfo.action.LeakInfoAction" id="leakInfoAction">
+        <property name="moduleService" ref="moduleService"/>
+        <property name="moduleCheckService" ref="moduleCheckService"/>
+        <property name="lawService" ref="lawService"/>
+    </bean>
+
+    <bean class="com.envcheck.report.modulefundaccount.action.ModuleFundAccountAction" id="moduleFundAccountAction">
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+    <bean class="com.envcheck.report.leakhistory.action.LeakHistoryAction" id="leakHistoryAction">
+        <property name="moduleService" ref="moduleService"/>
+        <property name="lawService" ref="lawService"/>
+    </bean>
+    <bean class="com.envcheck.report.repairtable.action.RepairTableAction" id="repairTableAction">
+        <property name="moduleService" ref="moduleService"/>
+        <property name="lawService" ref="lawService"/>
+    </bean>
+    <bean class="com.envcheck.report.modulepictureaccount.action.ModulePictureAccountAction"
+          id="modulePictureAccountAction">
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+    <bean class="com.envcheck.view.delayrepairinfo.action.DelayRepairInfoAction" id="delayRepairInfoAction">
+        <property name="moduleService" ref="moduleService"/>
+        <property name="lawService" ref="lawService"/>
+    </bean>
+    <bean class="com.envcheck.home.action.HomeAction" id="homeAction">
+        <property name="moduleService" ref="moduleService"/>
+        <property name="deviceInfoService" ref="deviceInfoService"/>
+    </bean>
+
+</beans>
+

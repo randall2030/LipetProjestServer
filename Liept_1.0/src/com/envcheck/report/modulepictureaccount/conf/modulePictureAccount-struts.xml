@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="modulepictureaccount" namespace="/report" extends="basePackge">
+
+		<action name="module_picture_account_*" class="com.envcheck.report.modulepictureaccount.action.ModulePictureAccountAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/report/modulepictureaccount/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">module_picture_account_listUI</param>
+			</result>
+
+
+			<result name="exportModulePictureInfo" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">exportModulePictureFile</param>
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="standrdgasmanage" namespace="/paramsetting/checkrepairsetting" extends="basePackge">
+
+		<action name="standrd_gas_manage_*" class="com.envcheck.paramsetting.checkrepairsetting.standrdgasmanage.action.StandGasAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/paramsetting/checkrepairsetting/standrdgasmanage/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">standrd_gas_manage_listUI</param>
+			</result>
+		</action>
+
+	</package>
+
+</struts>

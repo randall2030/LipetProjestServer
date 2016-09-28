@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="viewhistorycheck" namespace="/view" extends="basePackge">
+
+		<action name="view_history_check_*" class="com.envcheck.view.viewhistorycheck.action.ViewHistoryCheckAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/view/viewhistorycheck/{1}.jsp</result>
+			<result name="listUI">/WEB-INF/jsp/view/viewhistorycheck/listUI.jsp</result>
+		</action>
+	</package>
+
+</struts>

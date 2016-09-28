@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.checkrepairsetting.minchecktime.bean.SizeRange" table="size_range">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+		<property name="minSize" type="java.lang.String" >
+			<column name="min_size" ></column>
+		</property>
+
+		<property name="maxSize" type="java.lang.String" >
+			<column name="max_size" ></column>
+		</property>
+
+		<property name="minCheckTime" type="java.lang.Integer" >
+			<column name="min_check_time" ></column>
+		</property>
+
+	</class>
+
+</hibernate-mapping>
+

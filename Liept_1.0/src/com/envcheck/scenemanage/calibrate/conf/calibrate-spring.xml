@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+    <bean id="calibrateDao" class="com.envcheck.scenemanage.calibrate.dao.impl.CalibrateDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="calibrateService" class="com.envcheck.scenemanage.calibrate.service.impl.CalibrateService">
+        <property name="calibrateDao" ref="calibrateDao"></property>
+    </bean>
+
+    <bean id="calibrateDetailDao" class="com.envcheck.scenemanage.calibrate.dao.impl.CalibrateDetailDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="calibrateDetailService" class="com.envcheck.scenemanage.calibrate.service.impl.CalibrateDetailService">
+        <property name="calibrateDetailDao" ref="calibrateDetailDao"></property>
+    </bean>
+
+    <bean id="calibrateAction" class="com.envcheck.scenemanage.calibrate.action.CalibrateAction">
+        <property name="calibrateService" ref="calibrateService"/>
+    </bean>
+
+</beans>
+

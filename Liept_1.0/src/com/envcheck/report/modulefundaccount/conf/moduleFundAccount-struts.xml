@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="modulefundaccount" namespace="/report" extends="basePackge">
+
+		<action name="module_fund_account_*" class="com.envcheck.report.modulefundaccount.action.ModuleFundAccountAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/report/modulefundaccount/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">module_fund_account_listUI</param>
+			</result>
+
+			<result name="exportModuleFund" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">exportModuleFile</param>
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+
+		</action>
+
+		<action name="model_foun_accountUI" class="com.envcheck.report.modulefundaccount.action.ModuleFundAccountAction" method="listUI">
+			<result name="listUI">/WEB-INF/jsp/report/modulefundaccount/listUI.jsp</result>
+		</action>
+	</package>
+
+</struts>

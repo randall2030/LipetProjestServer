@@ -1,0 +1,1 @@
+{"checkApparatusList":[{"id":"402881e45548be0c015548bf69180000","sequenceNumber":"01","apparatusName":"TV-0806","lastCheckTime":"Jun 15, 2016 12:00:00 AM","reactTime":"10"},{"id":"4028b881554c9ebc01554cb772590000","sequenceNumber":"02","apparatusName":"TV-0807","lastCheckTime":"Jun 15, 2016 12:00:00 AM","reactTime":"10"}]}

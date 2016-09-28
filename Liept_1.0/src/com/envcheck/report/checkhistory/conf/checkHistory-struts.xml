@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="checkhistory" namespace="/report" extends="basePackge">
+
+		<action name="check_history_*" class="com.envcheck.report.checkhistory.action.CheckHistoryAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/report/checkhistory/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">check_history_listUI</param>
+			</result>
+
+			<result name="exportCheckInfo" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">exportCheckInfoFile</param>
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

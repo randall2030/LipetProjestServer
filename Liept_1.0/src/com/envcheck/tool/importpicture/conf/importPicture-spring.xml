@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+
+    <bean id="importPictureHistoryDao" class="com.envcheck.tool.importpicture.dao.impl.ImportPictureHistoryDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="importPictureHistoryService" class="com.envcheck.tool.importpicture.service.impl.ImportPictureHistoryService">
+        <property name="importPictureHistoryDao" ref="importPictureHistoryDao"></property>
+    </bean>
+
+
+    <bean id="importPictureAction" class="com.envcheck.tool.importpicture.action.ImportPictureAction">
+        <property name="importPictureHistoryService" ref="importPictureHistoryService"></property>
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+    <bean class="com.envcheck.view.picturemanage.action.PictureManageAction" id="pictureManageAction">
+        <property name="importPictureHistoryService" ref="importPictureHistoryService"/>
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+
+</beans>
+

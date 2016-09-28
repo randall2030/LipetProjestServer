@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.envcheck.base.bean">
+	
+	<class name="Module" table="module">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+		<property name="hasCheck" type="java.lang.Boolean" >
+			<column name="has_check" ></column>
+		</property>
+
+		<property name="leak" type="java.lang.Boolean" >
+			<column name="leak" ></column>
+		</property>
+
+		<property name="hasAllocate" type="java.lang.Boolean" >
+			<column name="has_allocate" ></column>
+		</property>
+
+		<property name="taskId" type="java.lang.String" >
+			<column name="task_id" length="64"></column>
+		</property>
+
+
+		<property name="device" type="java.lang.String" >
+			<column name="device" length="20" not-null="true"></column>
+		</property>
+		<property name="area" type="java.lang.String" >
+			<column name="area" length="20" not-null="true"></column>
+		</property>
+		<property name="equipment" type="java.lang.String" >
+			<column name="equipment" length="20" ></column>
+		</property>
+		<property name="labelNumber" type="java.lang.String" >
+			<column name="label_number" length="20" not-null="true"></column>
+		</property>
+		<property name="extendNumber" type="java.lang.Integer" >
+			<column name="extend_number" not-null="true"></column>
+		</property>
+		<property name="glandNumber" type="java.lang.String" >
+			<column name="gland_number" length="20" not-null="true"></column>
+		</property>
+
+
+
+		<!--private int pid;-->
+		<!--private String mainReference;-->
+		<!--private String mainDirection;-->
+		<!--private float mainDistance;-->
+		<!--private String mainUnit;-->
+		<!--private String minorReference;-->
+		<!--private String minorDirection;-->
+		<!--private float minorDistance;-->
+		<!--private String minorUnit;-->
+
+		<property name="pid" type="java.lang.Integer" >
+			<column name="pid"  ></column>
+		</property>
+		<property name="mainReference" type="java.lang.String" >
+			<column name="main_reference" length="40" not-null="true"></column>
+		</property>
+		<property name="mainDirection" type="java.lang.String" >
+			<column name="main_direction" length="20"></column>
+		</property>
+		<property name="mainDistance" type="java.lang.Float" >
+			<column name="main_distance" not-null="true"></column>
+		</property>
+		<property name="mainUnit" type="java.lang.String" >
+			<column name="main_unit" length="20" not-null="true"></column>
+		</property>
+		<property name="minorReference" type="java.lang.String" >
+			<column name="minor_reference" length="20" ></column>
+		</property>
+		<property name="minorDirection" type="java.lang.String" >
+			<column name="minor_direction" length="20" ></column>
+		</property>
+		<property name="minorDistance" type="java.lang.Float" >
+			<column name="minor_distance" ></column>
+		</property>
+		<property name="minorUnit" type="java.lang.String" >
+			<column name="minor_unit" length="20" ></column>
+		</property>
+
+
+		<property name="floor" type="java.lang.Float" >
+			<column name="floor"  ></column>
+		</property>
+		<property name="height" type="java.lang.Float" >
+			<column name="height"  ></column>
+		</property>
+		<property name="heightUnit" type="java.lang.String" >
+			<column name="height_unit" length="20" ></column>
+		</property>
+		<property name="appendDesc" type="java.lang.String" >
+			<column name="append_desc" length="40" ></column>
+		</property>
+		<property name="modelType" type="java.lang.String" >
+			<column name="model_type" length="20" not-null="true"></column>
+		</property>
+
+		<property name="modelSubType" type="java.lang.String" >
+			<column name="model_sub_type" length="20" ></column>
+		</property>
+		<property name="sizeMM" type="java.lang.Integer" >
+			<column name="size_mm"  not-null="true"></column>
+		</property>
+		<property name="mediumStatus" type="java.lang.String" >
+			<column name="medium_status" length="20" not-null="true"></column>
+		</property>
+
+		<property name="productStream" type="java.lang.String" >
+			<column name="product_stream" length="20" ></column>
+		</property>
+		<property name="productCompany" type="java.lang.String" >
+			<column name="product_company" length="20" ></column>
+		</property>
+		<property name="roadNumber" type="java.lang.String" >
+			<column name="road_number" length="20" ></column>
+		</property>
+		<property name="yearRunTime" type="java.lang.Integer" >
+			<column name="year_run_time" ></column>
+		</property>
+		<property name="modelBuildTime" type="java.util.Date" >
+			<column name="model_build_time"  ></column>
+		</property>
+
+
+		<!--private boolean diffToTouch;-->
+		<!--private boolean diffToCheck;-->
+		<!--private String diffToCheckReason;-->
+		<!--private boolean dangerToCheck;-->
+		<!--private String dangerToCheckReason;-->
+
+		<property name="diffToCheck" type="java.lang.String" >
+			<column name="diff_to_check" length="20"></column>
+		</property>
+		<property name="diffToTouch" type="java.lang.String" >
+			<column name="diff_to_touch" length="20" ></column>
+		</property>
+		<property name="dangerToCheck" type="java.lang.String" >
+			<column name="danger_to_check" length="20" ></column>
+		</property>
+		<property name="diffToCheckReason" type="java.lang.String" >
+			<column name="diff_to_check_reason" length="40" ></column>
+		</property>
+		<property name="dangerToCheckReason" type="java.lang.String" >
+			<column name="danger_to_check_reason" length="40" ></column>
+		</property>
+
+		<!--private String controlEquiAndWind;-->
+		<!--private String controlEquiAndWindType;-->
+		<!--private String pressWork;-->
+		<!--private String leakModule;-->
+		<!--private String locationZXZGArea;-->
+		<!--private String yearTime300;-->
+		<property name="controlEquiAndWind" type="java.lang.String" >
+			<column name="control_equi_and_wind" length="20"></column>
+		</property>
+		<property name="controlEquiAndWindType" type="java.lang.String" >
+			<column name="control_equi_and_wind_type" length="20" ></column>
+		</property>
+		<property name="pressWork" type="java.lang.String" >
+			<column name="press_work" length="20"></column>
+		</property>
+		<property name="leakModule" type="java.lang.String" >
+			<column name="leak_module" length="20"></column>
+		</property>
+		<property name="locationZXZGArea" type="java.lang.String" >
+			<column name="location_zxzg_area" length="20" ></column>
+		</property>
+		<property name="yearTime300" type="java.lang.String" >
+			<column name="tear_time_300" length="20"></column>
+		</property>
+
+		<!--private boolean warm;-->
+		<!--private String equipmentCode;-->
+		<!--private String mainMedium;-->
+		<!--private String operatorTemperature;-->
+		<!--private String operatorPress;-->
+
+		<property name="warm" type="java.lang.String" >
+			<column name="warm"  length="20"></column>
+		</property>
+		<property name="equipmentCode" type="java.lang.String" >
+			<column name="equipment_code" length="20" ></column>
+		</property>
+		<property name="mainMedium" type="java.lang.String" >
+			<column name="main_medium" length="20" ></column>
+		</property>
+
+		<property name="operatorTemperature" type="java.lang.String" >
+			<column name="operator_temperature" length="20" ></column>
+		</property>
+		<property name="operatorPress" type="java.lang.String" >
+			<column name="operator_press" length="20" ></column>
+		</property>
+
+		<!--private String sealMedium;-->
+		<!--private String barCode;-->
+		<!--private float imgX;-->
+		<!--private float imgY;-->
+		<!--private float heatX;-->
+		<!--private float heatY;-->
+		<property name="sealMedium" type="java.lang.String" >
+			<column name="seal_medium" length="20" ></column>
+		</property>
+		<property name="barCode" type="java.lang.String" >
+			<column name="bar_code" length="20" ></column>
+		</property>
+		<property name="imgX" type="java.lang.Float" >
+			<column name="img_x"  ></column>
+		</property>
+		<property name="imgY" type="java.lang.Float" >
+			<column name="img_y"  ></column>
+		</property>
+		<property name="heatX" type="java.lang.Float" >
+			<column name="heat_x"  ></column>
+		</property>
+		<property name="heatY" type="java.lang.Float" >
+			<column name="heat_y"  ></column>
+		</property>
+
+
+
+		<property name="tempToMove" type="java.lang.String" >
+			<column name="temp_to_move" length="20" ></column>
+		</property>
+		<property name="foreverToMove" type="java.lang.String" >
+			<column name="forever_to_move" length="20" ></column>
+		</property>
+
+		<property name="foreverToMoveReason" type="java.lang.String" >
+			<column name="forever_to_move_reason" length="20" ></column>
+		</property>
+
+		<property name="foreverToMoveTime" type="java.util.Date" >
+			<column name="forever_to_move_time" length="20" ></column>
+		</property>
+
+		<property name="picturePath" type="java.lang.String" >
+			<column name="picture_path" length="150" ></column>
+		</property>
+
+		<property name="changeManageID" type="java.lang.String" >
+			<column name="change_manage_id" length="20" ></column>
+		</property>
+
+		<property name="gpsX" type="java.lang.Float" >
+			<column name="gpsX" ></column>
+		</property>
+
+		<property name="gpsY" type="java.lang.Float" >
+			<column name="gpsY"></column>
+		</property>
+
+		<property name="gpsZ" type="java.lang.Float" >
+			<column name="gpsZ" ></column>
+		</property>
+
+		<property name="createTime" type="java.util.Date" >
+			<column name="create_time"  ></column>
+		</property>
+
+		<property name="modifyTime" type="java.util.Date" >
+			<column name="modify_time"  ></column>
+		</property>
+
+		<property name="positionDesc" type="java.lang.String" >
+			<column name="position_desc" length="40" ></column>
+		</property>
+
+		<property name="laws" type="java.lang.String" >
+			<column name="laws" length="20" ></column>
+		</property>
+
+
+		<one-to-one name="moduleCheck" lazy="false"></one-to-one>
+		<one-to-one name="moduleRepairRecord"></one-to-one>
+
+
+		<set name="dischargeForPPMRecords" table="discharge_for_ppm_record" cascade="all" lazy="false">
+			<key column="module_id"/>
+			<one-to-many class="com.envcheck.base.bean.discharge_check_history.DischargeForPPMRecord"></one-to-many>
+		</set>
+
+
+	</class>
+
+</hibernate-mapping>
+

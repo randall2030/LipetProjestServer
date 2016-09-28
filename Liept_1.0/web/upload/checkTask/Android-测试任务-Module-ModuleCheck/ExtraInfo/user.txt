@@ -1,0 +1,1 @@
+{"id":"4028b88155198857015519894e440000","username":"susion","mail":"susionsuc@163.com","password":"susion","name":"susion","mobilePhone":"18753391831","companyName":"susion","deptName":"检测部","device":"","status":true,"createTime":"Jun 4, 2016 11:51:16 AM","loginTotalNumber":115,"lastLoginTime":"Jun 15, 2016 3:24:16 PM"}

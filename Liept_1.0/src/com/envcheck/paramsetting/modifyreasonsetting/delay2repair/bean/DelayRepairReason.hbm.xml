@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.paramsetting.modifyreasonsetting.delay2repair.bean.DelayRepairReason" table="delay_repair_reason">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid"></generator>
+		</id>
+
+
+		<property name="delayRepairReasonName" type="java.lang.String" >
+			<column name="delay_repair_reason_name" length="20" not-null="true"></column>
+		</property>
+
+		<property name="delayRepairReasonNumber" type="java.lang.String" >
+			<column name="delay_repair_reason_number" length="40" not-null="true"></column>
+		</property>
+
+
+		<property name="createTime"  column="create_time" type="java.util.Date" length="20"></property>
+		<property name="createPerson" column="create_person" type="java.lang.String" length="20"></property>
+		<property name="modifyTime" column="modify_time" type="java.util.Date"  length="20"></property>
+		<property name="modifyPerson" column="modify_person" type="java.lang.String"  length="20"></property>
+
+
+		
+	</class>
+
+</hibernate-mapping>
+

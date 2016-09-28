@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="letnumberstatistics" namespace="/report/statistics" extends="basePackge">
+
+		<action name="let_number_statistics_*" class="com.envcheck.report.statistics.letnumberstatistics.action.LetNumberStatisticsAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/report/statistics/letnumberstatistics/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">let_number_statistics_listUI</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

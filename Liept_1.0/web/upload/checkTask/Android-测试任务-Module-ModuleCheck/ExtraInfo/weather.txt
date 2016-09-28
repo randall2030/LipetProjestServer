@@ -1,0 +1,1 @@
+{"weatherInfoList":[{"createTime":"2016-06-15 15:37:34","hnmidity":"88","note":"99","press":"68","temperature":"77","windDirection":"西风","windSpeed":"55"}]}

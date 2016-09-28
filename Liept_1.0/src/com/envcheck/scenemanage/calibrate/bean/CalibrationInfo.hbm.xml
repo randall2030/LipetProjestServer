@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.envcheck.scenemanage.calibrate.bean.CalibrationInfo" table="calibrate">
+
+		<id name="id" type="java.lang.String">
+			<column name="id" length="100" />
+		</id>
+
+
+		<property name="equipmentNumber" type="java.lang.String" >
+			<column name="equipment_number" length="30" ></column>
+		</property>
+
+
+		<property name="checkPerson" type="java.lang.String" >
+			<column name="check_person" length="30" ></column>
+		</property>
+
+		<property name="calibrationTime" type="java.util.Date" >
+			<column name="calibration_time"  length="20"></column>
+		</property>
+
+		<!--private boolean dailyCalibrationResult;-->
+		<!--private boolean driftCalibrationResult;-->
+
+		<property name="dailyCalibrationResult" type="java.lang.Boolean" >
+			<column name="daily_calibration_result"  ></column>
+		</property>
+
+		<property name="driftCalibrationResult" type="java.lang.Boolean" >
+			<column name="drift_calibration_result"  ></column>
+		</property>
+
+
+		<set name="dailyCalibrationInfos" table="calibrate_detail"  cascade="all" inverse="false" outer-join="false" lazy="false">
+			<key column="calibration_id"></key>
+			<one-to-many  class="com.envcheck.scenemanage.calibrate.bean.CalibrationInfoDetail"></one-to-many>
+		</set>
+
+		<set name="driftCalibrationInfos" table="calibrate_detail"  cascade="all" inverse="false" outer-join="false" lazy="false">
+			<key column="calibration_id"></key>
+			<one-to-many  class="com.envcheck.scenemanage.calibrate.bean.CalibrationInfoDetail"></one-to-many>
+		</set>
+
+	</class>
+
+</hibernate-mapping>
+
